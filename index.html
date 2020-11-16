@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firebase Workshop</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.0.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.0.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.0.2/firebase-database.js"></script>
+
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  </head>
+  <body>
+    <h1>Firebase Workshop!</h1>
+    <button onclick="googleLogin()">Log into Google</button>
+    <h1>Who are you?</h1>
+    <form action="javascript:;" onsubmit="ContactForm()">
+      <label for="name">Enter your name: </label>
+      <input type="text" name="name" id="name">
+      <label for="age">Enter your age:</label>
+      <input type="text" id="age">
+      <label for="gender">Enter your gender:</label>
+      <input type="text" id="gender">
+      <input type="submit" value="Submit">
+    </form>
+    <div id="Personal Info">
+      <h1>You are:</h1>
+      <form action="javascript:;" onsubmit="UpdateDB()">
+        <label for="updName">Name: </label>
+        <input type="text" name="updName" id="updName">
+        <label for="updAge">Age: </label>
+        <input type="text" name="updAge" id="updAge">
+        <label for="updGender">Gender: </label>
+        <input type="text" name="updGender" id="updGender">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
